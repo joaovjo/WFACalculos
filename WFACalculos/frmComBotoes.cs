@@ -20,16 +20,16 @@ namespace WFACalculos
         private void btnSomar_Click(object sender, EventArgs e)
         {
             try
-            {
-                lblSinal.Text = "+";
+                {
+                    lblSinal.Text = "+";
 
-                lblResultado.Text = (double.Parse(txtNum1.Text) + double.Parse(txtNum2.Text)).ToString();
+                    lblResultado.Text = (double.Parse(txtNum1.Text) + double.Parse(txtNum2.Text)).ToString();
 
-            }
+                }
             catch (FormatException)
-            {
-                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-            }
+                {
+                    MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
+                }
         }
 
         private void btnSubtrair_Click(object sender, EventArgs e)

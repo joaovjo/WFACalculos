@@ -63,6 +63,7 @@ namespace WFACalculos.Classes
                 mensagem = a + " é Impar e " + b + " é Par";
                 return mensagem;
             }
+            
         }
 
         public string Porcentagem()
