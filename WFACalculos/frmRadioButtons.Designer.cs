@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.grbOperacoes = new System.Windows.Forms.GroupBox();
+            this.rdbParImpar = new System.Windows.Forms.RadioButton();
             this.rdbSomar = new System.Windows.Forms.RadioButton();
             this.rdbSubtrair = new System.Windows.Forms.RadioButton();
-            this.rdbMultiplicar = new System.Windows.Forms.RadioButton();
+            this.rdbComparar = new System.Windows.Forms.RadioButton();
             this.rdbDividir = new System.Windows.Forms.RadioButton();
             this.rdbPorcentagem = new System.Windows.Forms.RadioButton();
             this.rdbPotencia = new System.Windows.Forms.RadioButton();
-            this.rdbComparar = new System.Windows.Forms.RadioButton();
-            this.rdbParImpar = new System.Windows.Forms.RadioButton();
+            this.rdbMultiplicar = new System.Windows.Forms.RadioButton();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -65,6 +65,18 @@
             this.grbOperacoes.TabStop = false;
             this.grbOperacoes.Text = "Operações";
             // 
+            // rdbParImpar
+            // 
+            this.rdbParImpar.AutoSize = true;
+            this.rdbParImpar.Location = new System.Drawing.Point(6, 180);
+            this.rdbParImpar.Name = "rdbParImpar";
+            this.rdbParImpar.Size = new System.Drawing.Size(85, 17);
+            this.rdbParImpar.TabIndex = 6;
+            this.rdbParImpar.TabStop = true;
+            this.rdbParImpar.Text = "Par ou Ímpar";
+            this.rdbParImpar.UseVisualStyleBackColor = true;
+            this.rdbParImpar.CheckedChanged += new System.EventHandler(this.rdbParImpar_CheckedChanged);
+            // 
             // rdbSomar
             // 
             this.rdbSomar.AutoSize = true;
@@ -89,17 +101,17 @@
             this.rdbSubtrair.UseVisualStyleBackColor = true;
             this.rdbSubtrair.CheckedChanged += new System.EventHandler(this.rdbSubtrair_CheckedChanged);
             // 
-            // rdbMultiplicar
+            // rdbComparar
             // 
-            this.rdbMultiplicar.AutoSize = true;
-            this.rdbMultiplicar.Location = new System.Drawing.Point(6, 65);
-            this.rdbMultiplicar.Name = "rdbMultiplicar";
-            this.rdbMultiplicar.Size = new System.Drawing.Size(72, 17);
-            this.rdbMultiplicar.TabIndex = 1;
-            this.rdbMultiplicar.TabStop = true;
-            this.rdbMultiplicar.Text = "Multiplicar";
-            this.rdbMultiplicar.UseVisualStyleBackColor = true;
-            this.rdbMultiplicar.CheckedChanged += new System.EventHandler(this.rdbMultiplicar_CheckedChanged);
+            this.rdbComparar.AutoSize = true;
+            this.rdbComparar.Location = new System.Drawing.Point(6, 157);
+            this.rdbComparar.Name = "rdbComparar";
+            this.rdbComparar.Size = new System.Drawing.Size(70, 17);
+            this.rdbComparar.TabIndex = 5;
+            this.rdbComparar.TabStop = true;
+            this.rdbComparar.Text = "Comparar";
+            this.rdbComparar.UseVisualStyleBackColor = true;
+            this.rdbComparar.CheckedChanged += new System.EventHandler(this.rdbComparar_CheckedChanged);
             // 
             // rdbDividir
             // 
@@ -137,29 +149,17 @@
             this.rdbPotencia.UseVisualStyleBackColor = true;
             this.rdbPotencia.CheckedChanged += new System.EventHandler(this.rdbPotencia_CheckedChanged);
             // 
-            // rdbComparar
+            // rdbMultiplicar
             // 
-            this.rdbComparar.AutoSize = true;
-            this.rdbComparar.Location = new System.Drawing.Point(6, 157);
-            this.rdbComparar.Name = "rdbComparar";
-            this.rdbComparar.Size = new System.Drawing.Size(70, 17);
-            this.rdbComparar.TabIndex = 5;
-            this.rdbComparar.TabStop = true;
-            this.rdbComparar.Text = "Comparar";
-            this.rdbComparar.UseVisualStyleBackColor = true;
-            this.rdbComparar.CheckedChanged += new System.EventHandler(this.rdbComparar_CheckedChanged);
-            // 
-            // rdbParImpar
-            // 
-            this.rdbParImpar.AutoSize = true;
-            this.rdbParImpar.Location = new System.Drawing.Point(6, 180);
-            this.rdbParImpar.Name = "rdbParImpar";
-            this.rdbParImpar.Size = new System.Drawing.Size(85, 17);
-            this.rdbParImpar.TabIndex = 6;
-            this.rdbParImpar.TabStop = true;
-            this.rdbParImpar.Text = "Par ou Ímpar";
-            this.rdbParImpar.UseVisualStyleBackColor = true;
-            this.rdbParImpar.CheckedChanged += new System.EventHandler(this.rdbParImpar_CheckedChanged);
+            this.rdbMultiplicar.AutoSize = true;
+            this.rdbMultiplicar.Location = new System.Drawing.Point(6, 65);
+            this.rdbMultiplicar.Name = "rdbMultiplicar";
+            this.rdbMultiplicar.Size = new System.Drawing.Size(72, 17);
+            this.rdbMultiplicar.TabIndex = 1;
+            this.rdbMultiplicar.TabStop = true;
+            this.rdbMultiplicar.Text = "Multiplicar";
+            this.rdbMultiplicar.UseVisualStyleBackColor = true;
+            this.rdbMultiplicar.CheckedChanged += new System.EventHandler(this.rdbMultiplicar_CheckedChanged);
             // 
             // btnCalcular
             // 
@@ -247,7 +247,7 @@
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.grbOperacoes);
             this.Name = "frmRadioButtons";
-            this.Text = "frmRadioButtons";
+            this.Text = "Calculadora Radio Buttons";
             this.grbOperacoes.ResumeLayout(false);
             this.grbOperacoes.PerformLayout();
             this.ResumeLayout(false);
