@@ -40,7 +40,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNumero = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNegativo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button22 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.btnOperacao = new System.Windows.Forms.Button();
             this.lblVisor = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnIgual = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btnNumero);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnNegativo);
             this.groupBox1.Location = new System.Drawing.Point(12, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(203, 277);
@@ -174,6 +174,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = ",";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnNumero_Click);
             // 
             // btnNumero
             // 
@@ -185,14 +186,15 @@
             this.btnNumero.UseVisualStyleBackColor = true;
             this.btnNumero.Click += new System.EventHandler(this.btnNumero_Click);
             // 
-            // button1
+            // btnNegativo
             // 
-            this.button1.Location = new System.Drawing.Point(6, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "+/-";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNegativo.Location = new System.Drawing.Point(6, 211);
+            this.btnNegativo.Name = "btnNegativo";
+            this.btnNegativo.Size = new System.Drawing.Size(50, 43);
+            this.btnNegativo.TabIndex = 0;
+            this.btnNegativo.Text = "+/-";
+            this.btnNegativo.UseVisualStyleBackColor = true;
+            this.btnNegativo.Click += new System.EventHandler(this.btnNegativo_Click);
             // 
             // groupBox2
             // 
@@ -280,14 +282,15 @@
             this.lblVisor.TabIndex = 3;
             this.lblVisor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button16
+            // btnLimpar
             // 
-            this.button16.Location = new System.Drawing.Point(231, 60);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(119, 43);
-            this.button16.TabIndex = 7;
-            this.button16.Text = "←";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnLimpar.Location = new System.Drawing.Point(231, 60);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(119, 43);
+            this.btnLimpar.TabIndex = 7;
+            this.btnLimpar.Text = "←";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // btnIgual
             // 
@@ -314,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(362, 388);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIgual);
-            this.Controls.Add(this.button16);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.lblVisor);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -340,7 +343,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnNumero;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNegativo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button21;
@@ -349,7 +352,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button btnOperacao;
         private System.Windows.Forms.Label lblVisor;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnIgual;
         private System.Windows.Forms.Label label1;
     }

@@ -64,155 +64,75 @@ namespace WFACalculos
                 switch (lblSinal.Text)
                 {
                     case "+":
-                        {
-                            try
-                            {
-                                lblResultado.Text = (double.Parse(txtNum1.Text) + double.Parse(txtNum2.Text)).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
+                        lblResultado.Text = (double.Parse(txtNum1.Text) + double.Parse(txtNum2.Text)).ToString();
+                        break;
 
                     case "-":
-                        {
-                            try
-                            {
-                                lblResultado.Text = (double.Parse(txtNum1.Text) - double.Parse(txtNum2.Text)).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
+                        lblResultado.Text = (double.Parse(txtNum1.Text) - double.Parse(txtNum2.Text)).ToString();
+                        break;
 
                     case "*":
-                        {
-                            try
-                            {
-                                lblResultado.Text = (double.Parse(txtNum1.Text) * double.Parse(txtNum2.Text)).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
+                        lblResultado.Text = (double.Parse(txtNum1.Text) * double.Parse(txtNum2.Text)).ToString();
+                        break;
 
                     case "/":
-                        {
-                            try
-                            {
-                                if (double.Parse(txtNum2.Text) == 0)
-                                {
-                                    MessageBox.Show("O número divisor não pode ser zero! Por favor, informe outro número!");
-                                }
-                                lblResultado.Text = (double.Parse(txtNum1.Text) / double.Parse(txtNum2.Text)).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
+                        lblResultado.Text = (double.Parse(txtNum1.Text) / double.Parse(txtNum2.Text)).ToString();
+                        break;
 
                     case "%":
-                        {
-                            try
-                            {
-                                lblResultado.Text = (double.Parse(txtNum1.Text) * double.Parse(txtNum2.Text) / 100).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
+                        lblResultado.Text = (double.Parse(txtNum1.Text) * double.Parse(txtNum2.Text) / 100).ToString();
+                        break;
 
                     case "^":
-                        {
-                            try
-                            {
-                                lblResultado.Text = Math.Pow(double.Parse(txtNum1.Text), double.Parse(txtNum2.Text)).ToString();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
-                        }
-
-
+                        lblResultado.Text = Math.Pow(double.Parse(txtNum1.Text), double.Parse(txtNum2.Text)).ToString();
+                        break;
 
                     case "==":
-                        {
-                            try
+                        if ((double.Parse(txtNum1.Text) > double.Parse(txtNum2.Text)))
                             {
-                                if ((double.Parse(txtNum1.Text) > double.Parse(txtNum2.Text)))
-                                {
-                                    lblResultado.Text = (double.Parse(txtNum1.Text) + " Maior que " + double.Parse(txtNum2.Text).ToString());
-                                }
+                                lblResultado.Text = (double.Parse(txtNum1.Text) + " Maior que " + double.Parse(txtNum2.Text).ToString());
+                            }
 
-                                else if ((double.Parse(txtNum1.Text) < double.Parse(txtNum2.Text)))
-                                {
-                                    lblResultado.Text = (double.Parse(txtNum2.Text) + " Maior que " + double.Parse(txtNum1.Text).ToString());
-                                }
-                                else
-                                {
-                                    lblResultado.Text = "Os números são iguais";
-                                }
-                            }
-                            catch (FormatException)
+                        else if ((double.Parse(txtNum1.Text) < double.Parse(txtNum2.Text)))
                             {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
+                                lblResultado.Text = (double.Parse(txtNum2.Text) + " Maior que " + double.Parse(txtNum1.Text).ToString());
                             }
-                            break;
-                        }
+                        else
+                            {
+                                lblResultado.Text = "Os números são iguais";
+                            }
+                        break;
 
                     case "P ou I":
+                        double a, b, NumA, NumB;
+                        a = double.Parse(txtNum1.Text);
+                        b = double.Parse(txtNum2.Text);
+
+                        NumA = a % 2;
+                        NumB = b % 2;
+                        lblSinal.Text = "I ou P";
+
+                        if (NumA == 0 && NumB == 0)
                         {
-                            try
-                            {
-                                double a, b, NumA, NumB;
-                                a = double.Parse(txtNum1.Text);
-                                b = double.Parse(txtNum2.Text);
-
-                                NumA = a % 2;
-                                NumB = b % 2;
-                                lblSinal.Text = "P ou I";
-
-                                if (NumA == 0 && NumB == 0)
-                                {
-                                    lblResultado.Text = "Ambos os números são par";
-                                }
-                                else if (NumA == 1 && NumB == 1)
-                                {
-                                    lblResultado.Text = "Ambos os números são impar";
-                                }
-                                else if (NumA == 0 && NumB == 1)
-                                {
-                                    lblResultado.Text = a + " é par e " + b + " é impar";
-                                }
-                                else if (NumA == 1 && NumB == 0)
-                                {
-                                    lblResultado.Text = a + " é impar e " + b + " é par";
-                                }
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Informe apenas números e não deixe nenhum campo em branco!");
-                            }
-                            break;
+                            lblResultado.Text = "Ambos os números são Par";
                         }
+                        else if (NumA == 1 && NumB == 1)
+                        {
+                            lblResultado.Text = "Ambos os números são Impar";
+                        }
+                        else if (NumA == 0 && NumB == 1)
+                        {
+                            lblResultado.Text = a + " é Par e " + b + " é Impar";
+                        }
+                        else if (NumA == 1 && NumB == 0)
+                        {
+                            lblResultado.Text = a + " é Impar e " + b + " é Par";
+                        }
+                        break;
 
                     default:
-                        {
-                            lblResultado.Text = "?";
-                            break;
-                        }
+                        lblResultado.Text = "?";
+                        break;
                 }
             }
             catch (FormatException)
